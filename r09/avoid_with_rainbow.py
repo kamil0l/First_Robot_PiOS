@@ -17,3 +17,18 @@ class ObstacleAvoidingBehavior:
         inverted = max(0, 1.0 - distance)
         led_bar = int(round(inverted * self.led_half)) + 1
         return led_bar
+
+    def display_state(self, left_distance, right_distance):
+        # Zgaszenie wszystkich diod LED
+        self.robot.leds.clear()
+        # Lewa strona
+        led_bar = self.distance_to_led_bar(left_distance)
+        show_rainbow(self.robot.leds, range(led_bar))
+        # Prawa strona
+        led_bar = self.distance_to_led_bar(right_distance)
+        # Bardziej skomplikowane - zakres diod musi zaczynać się od adresu osatatniej diody w słupku do adresu ostatniej diody w pasku LED.
+        start = (self.robot.leds.count - 1) - (led_bar)
+        right_range = range(self.robot.leds.count - 1, start, -1)
+        show_rainbow(self.robot.leds, right_range)
+        # Zapalenie ustawionych diod LED
+        self.robot.leds.show()
