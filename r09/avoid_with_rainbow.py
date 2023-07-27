@@ -11,3 +11,9 @@ class ObstacleAvoidingBehavior:
         # Obliczenie liczby diod dla słupków
         self.led_half = int(self.robot.leds.count/2)
         self.sense_colour = 255, 0, 0
+
+    def distance_to_led_bar(self, distance):
+        # Odwrócenie wartości, tak aby mniejsza odległość przekładała się na większą liczbę diod.
+        inverted = max(0, 1.0 - distance)
+        led_bar = int(round(inverted * self.led_half)) + 1
+        return led_bar
