@@ -1,0 +1,13 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <title>Serwer z obrazami z robota</title>
+    </head>
+    <body>
+        <h1>Serwer z obrazami z robota</h1>
+        <img src="{{ url_for('display') }}"><br>
+        <a href="#" onclick="$.post('/control', {'command': 'start'});">Start</a>
+        <a href="#" onclick="$.post('/control', {'command': 'stop'})">Stop</a><br>
+        <a href="#" onclick="$.post('/control', {'command': 'exit'});">Wyjście</a>
+    </body>
+</html>
