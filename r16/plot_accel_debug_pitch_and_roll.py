@@ -8,7 +8,7 @@ imu = RobotImu()
 
 
 pr = vp.graph(xmin=0, xmax=60, scroll=True)
-graph_pitch = vp.gcurve(color=vp.color.red, graph=pr)
+graph_pitch = vp.gcurve(color=vp.color.red, graph=pr)0
 graph_roll = vp.gcurve(color=vp.color.green, graph=pr)
 
 xyz = vp.graph(xmin=0, xmax=60, scroll=True)
