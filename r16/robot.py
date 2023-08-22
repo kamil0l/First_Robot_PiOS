@@ -75,7 +75,6 @@ class Robot:
 
         # Reset serwomotorów
         self.servos.stop_all()
-
     def set_pan(self, angle):
         self.servos.set_servo_angle(1, angle)
 
