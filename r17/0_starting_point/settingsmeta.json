@@ -1,0 +1,17 @@
+{
+    "skillMetadata": {
+        "sections": [
+            {
+                "name": "Robot",
+                "fields": [
+                    {
+                        "name": "base_url",
+                        "type": "text",
+                        "label": "Podstawowy adres URL serweru sterującego",
+                        "value": "http://myrobot.local:5000"
+                    }
+                ]
+            }
+        ]
+    }
+}
